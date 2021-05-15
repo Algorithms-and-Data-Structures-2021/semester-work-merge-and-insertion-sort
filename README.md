@@ -1,5 +1,4 @@
-# Название семестровой работы
-
+Merge и Tim sort
 [![CMake](https://github.com/Algorithms-and-Data-Structures-2021/semester-work-merge-and-insertion-sort/actions/workflows/cmake.yml/badge.svg)](https://github.com/Algorithms-and-Data-Structures-2021/semester-work-merge-and-insertion-sort/actions/workflows/cmake.yml)
 
 **_Измените status badge сверху для отображения статуса сборки вашего проекта._**
