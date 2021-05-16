@@ -9,8 +9,7 @@ namespace itis {
     return firstNum > secondNum ? secondNum : firstNum;
   }
 
-  void MergeSort::mergeSort(int *arr) {
-    int length = sizeof(arr) / sizeof(arr[0]);
+  void MergeSort::mergeSort(int *arr, int length) {
     for (int size = 1; size < length; size = size * 2) {
       for (int left = 0; left < length; left += size*2) {
         int middle = min(left + size - 1, length - 1);

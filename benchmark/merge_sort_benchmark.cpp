@@ -35,13 +35,16 @@ int main() {
           vect.push_back(stoi(line));
         }
       }
-      int *arr = new int[vect.size()];
-      for (int k = 0; k < vect.size(); ++k) {
+
+      int vectorSize = vect.size();
+
+      int *arr = new int[vectorSize];
+      for (int k = 0; k < vectorSize; ++k) {
         arr[k] = vect[k];
       }
       const auto time_point_before = chrono::steady_clock::now();
 
-      MergeSort::mergeSort(arr);
+      MergeSort::mergeSort(arr, vectorSize);
 
       const auto time_point_after = chrono::steady_clock::now();
       sort(vect.begin(), vect.end());
@@ -49,11 +52,11 @@ int main() {
       const auto time_diff = time_point_after - time_point_before;
       const auto time_elapsed_ns = chrono::duration_cast<chrono::nanoseconds>(time_diff).count();
 
-      for (int k = 0; k < vect.size(); ++k) {
+      for (int k = 0; k < vectorSize; ++k) {
         cout<<arr[k]<<" "<<vect[k]<<endl;
       }
 
-      string equals = equal(arr, arr +vect.size(), vect.begin(), vect.end()) ? "equals" : "not equals";
+      string equals = equal(arr, arr + vectorSize, vect.begin(), vect.end()) ? "equals" : "not equals";
       output_file << "TestCase" + to_string(i) +"/TestData"+ to_string(j) +"," << time_elapsed_ns
                   <<"," + equals<<endl;
       vect.clear();
