@@ -1,20 +1,16 @@
 #pragma once
 
-// Заголовочный файл с объявлением структуры данных
 
 namespace itis {
 
-  inline constexpr auto kStringConstant = "Hello, stranger!";
+  struct MergeSort {
 
-  // Пример: объявление структуры с полями и методами
-  struct MyStructure {
+    MergeSort();
 
-    MyStructure();
-
-    void merge(int arr[], int left, int middle, int right, int arrSize, int temp[]);
-    int min(int firstNum, int secondNum);
-    void mergeSort(int arr[], int length);
-    void printArr(int arr[], int length);
+    static void merge(int arr[], int left, int middle, int right, int arrSize);
+    static int min(int firstNum, int secondNum);
+    static void mergeSort(int arr[], int length);
+    static void printArr(int arr[], int length);
   };
 
-}  // namespace itis
+}

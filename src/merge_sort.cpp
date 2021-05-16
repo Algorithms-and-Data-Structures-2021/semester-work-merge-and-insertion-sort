@@ -4,27 +4,26 @@
 
 namespace itis {
 
-  int MyStructure::min(int firstNum, int secondNum) {
+  int MergeSort::min(int firstNum, int secondNum) {
     return firstNum > secondNum ? secondNum : firstNum;
   }
 
-  void MyStructure::mergeSort(int *arr, int length) {
-    int *temp = new int[length];
+  void MergeSort::mergeSort(int *arr, int length) {
     for (int size = 1; size < length; size = size * 2) {
       for (int left = 0; left < length; left += size*2) {
         int middle = min(left + size - 1, length - 1);
         int right = min(middle + size, length - 1);
-        merge(arr, left, middle, right, length, temp);
+        merge(arr, left, middle, right, length);
       }
     }
   }
 
-  void MyStructure::merge(int *arr, int left, int middle, int right, int arrSize, int *temp) {
+  void MergeSort::merge(int *arr, int left, int middle, int right, int arrSize) {
     int i = left;
     int j = middle + 1;
     int k = left;
+    int *temp = new int[arrSize];
     std::copy(arr, arr + arrSize, temp);
-
     while(i<=middle && j <=right){
       if(arr[i] < arr[j]){
         temp[k++] = arr[i++];
@@ -41,13 +40,14 @@ namespace itis {
       temp[k++] = arr[j++];
     }
     std::copy(temp, temp + arrSize, arr);
+    delete[] temp;
   }
-  void MyStructure::printArr(int *arr, int length) {
+  void MergeSort::printArr(int *arr, int length) {
     for (int i = 0; i < length; ++i) {
       std::cout<<arr[i]<<" ";
     }
     std::cout<<" "<<std::endl;
   }
-  MyStructure::MyStructure() {}
+  MergeSort::MergeSort() {}
 
 }  // namespace itis

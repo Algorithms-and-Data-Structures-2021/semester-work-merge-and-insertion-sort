@@ -30,12 +30,12 @@ target_compile_definitions(project_paths INTERFACE
         PROJECT_SOURCE_DIR="${CMAKE_SOURCE_DIR}"
         PROJECT_DATASET_DIR="${CMAKE_SOURCE_DIR}/dataset/data")
 
-# === Библиотека со структурой данных (target) ===
+# === Библиотека с алгоритмом ===
 # Это самое главное, что вы должны реализовать в рамках семестрового проекта.
 
 add_library(${PROJECT_NAME} STATIC
-        src/merge_sort.cpp
-        include/merge_sort.hpp include/tim_sort.h src/tim-sort.cpp)
+        src/merge_sort.cpp include/merge_sort.hpp
+        src/tim-sort.cpp include/tim_sort.hpp)
 
 # включить предупреждения компилятора для библиотеки (линковка)
 target_link_libraries(${PROJECT_NAME} PRIVATE project_warnings)
