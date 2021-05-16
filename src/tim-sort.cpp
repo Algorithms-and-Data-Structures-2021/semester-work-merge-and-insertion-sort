@@ -4,11 +4,23 @@
 using namespace std;
 
 namespace itis {
-  void TimSort::sort(int *arr, int length) {
-    for (int i = 0; i < length; i+=RUN) {
-      insertionSort(arr, i, MergeSort::min(i+RUN-1, length - 1));
+
+  int getRun(int length)
+  {
+    int r = 0;
+    while (length >= 64) {
+      r |= length & 1;
+      length >>= 1;
     }
-    for (int size = RUN; size < length;
+    return length + r;
+  }
+
+  void TimSort::sort(int *arr, int length) {
+    run = getRun(length);
+    for (int i = 0; i < length; i+= run) {
+      insertionSort(arr, i, MergeSort::min(i+ run -1, length - 1));
+    }
+    for (int size = run; size < length;
          size = 2*size)
     {
       for (int left = 0; left < length;

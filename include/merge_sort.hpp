@@ -11,6 +11,7 @@ namespace itis {
     static int min(int firstNum, int secondNum);
     static void mergeSort(int arr[], int length);
     static void printArr(int arr[], int length);
+    static void swap(int &val1, int &val2);
   };
 
 }

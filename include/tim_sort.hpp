@@ -3,7 +3,7 @@
 
 namespace itis {
 
-  const int RUN = 32;
+  int run;
 
   struct TimSort {
 

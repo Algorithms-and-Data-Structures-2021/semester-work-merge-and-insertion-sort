@@ -1,8 +1,17 @@
 #include <iostream>
 #include "merge_sort.hpp"
 
-
+using namespace std;
 namespace itis {
+
+  int nextGap(int gap)
+  {
+    if (gap <= 1)
+    {
+      return 0;
+    }
+    return (gap / 2) + (gap % 2);
+  }
 
   int MergeSort::min(int firstNum, int secondNum) {
     return firstNum > secondNum ? secondNum : firstNum;
@@ -19,28 +28,15 @@ namespace itis {
   }
 
   void MergeSort::merge(int *arr, int left, int middle, int right, int arrSize) {
-    int i = left;
-    int j = middle + 1;
-    int k = left;
-    int *temp = new int[arrSize];
-    std::copy(arr, arr + arrSize, temp);
-    while(i<=middle && j <=right){
-      if(arr[i] < arr[j]){
-        temp[k++] = arr[i++];
-      }else{
-        temp[k++] = arr[j++];
+
+    int gap = (right - left)/2 + (right - left)%2;
+    for(;gap != 0; gap = nextGap(gap)) {
+      for (int l = left; l + gap <= right; l++) {
+        if(arr[l] > arr[l + gap]){
+          swap(arr[l], arr[l+gap]);
+        }
       }
     }
-
-    while(i <= middle){
-      temp[k++] = arr[i++];
-    }
-
-    while(j <= right){
-      temp[k++] = arr[j++];
-    }
-    std::copy(temp, temp + arrSize, arr);
-    delete[] temp;
   }
   void MergeSort::printArr(int *arr, int length) {
     for (int i = 0; i < length; ++i) {
@@ -49,5 +45,11 @@ namespace itis {
     std::cout<<" "<<std::endl;
   }
   MergeSort::MergeSort() {}
+  void MergeSort::swap(int &val1, int &val2) {
+    int temp = val1;
+    val1 = val2;
+    val2 = temp;
+  }
+
 
 }  // namespace itis
