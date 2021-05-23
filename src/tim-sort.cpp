@@ -30,7 +30,7 @@ namespace itis {
         int right = MergeSort::min((left + 2*size - 1),
                         (length-1));
         if(mid < right)
-          MergeSort::merge(arr, left, mid, right);
+          MergeSort::merge(arr, left, right);
       }
     }
   }
