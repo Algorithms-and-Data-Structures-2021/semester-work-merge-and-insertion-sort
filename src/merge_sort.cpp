@@ -27,7 +27,7 @@ namespace itis {
     }
   }
 
-  void MergeSort::merge(int *arr, int left, int middle, int right, int arrSize) {
+  void MergeSort::merge(int *arr, int left, int right) {
 
     int gap = (right - left)/2 + (right - left)%2;
     for(;gap != 0; gap = nextGap(gap)) {
