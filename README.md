@@ -116,4 +116,10 @@ cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo && cmake --config RelWithDebInfo --bu
 ## Источники
 
 _Список использованных при реализации алгоритма источников._
+[Merge sort on wiki](https://en.wikipedia.org/wiki/Merge_sort#Use_with_tape_drives)
+[Merge sort on GFG](https://www.geeksforgeeks.org/merge-sort/)
+[Timsort on GFG](https://www.geeksforgeeks.org/timsort/)
+[Timsort on wiki](https://ru.wikipedia.org/wiki/Timsort)
+[Timsort on habr](https://habr.com/ru/company/infopulse/blog/133303/)
+
 
