@@ -20,9 +20,8 @@ namespace itis {
   void MergeSort::mergeSort(int *arr, int length) {
     for (int size = 1; size < length; size = size * 2) {
       for (int left = 0; left < length; left += size*2) {
-        int middle = min(left + size - 1, length - 1);
-        int right = min(middle + size, length - 1);
-        merge(arr, left, middle, right, length);
+        int right = min(left + size, length - 1);
+        merge(arr, left, right);
       }
     }
   }
