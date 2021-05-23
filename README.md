@@ -68,7 +68,7 @@ cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo && cmake --config RelWithDebInfo --bu
 
 Тестовые данные хранятся в формате CSV, сгенерировать их вы можете при помощи приложенного в google drive .jar файла, либо же взять уже готовые.
 
-Для генерации данных при помощи jar файла вы должны скачать файл из папки [google drive](https://drive.google.com/drive/folders/1bdaRkm9ZK3eV_Z18VlS_SyQRzGM40TQU?usp=sharing)
+Для генерации данных при помощи jar файла вы должны скачать файл из папки [google drive](https://drive.google.com/drive/folders/1jtFTDrXv-NbN99Ckw8ZSXjIV17Jw3oIt?usp=sharing)
 ![изображение](https://user-images.githubusercontent.com/79557554/116746776-af726400-aa05-11eb-990e-44ab2334d060.png)
 
 
@@ -76,13 +76,13 @@ cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo && cmake --config RelWithDebInfo --bu
 ![изображение](https://user-images.githubusercontent.com/79557554/116747057-0b3ced00-aa06-11eb-8784-d7e5cb271985.png)
 
 
-После нажатия на кнопку Generate! и пяти-десятисекундного ожидания в указанной вами папки появятся сгенерированные случайно значения.
+После нажатия на кнопку Generate! и пятисекундного ожидания в указанной вами папки появятся сгенерированные случайно значения.
 
 
 Генерация тестового набора данных в
 формате [comma-seperated values (CSV)](https://en.wikipedia.org/wiki/Comma-separated_values):
 
-[Папка с тестовыми данными и файлом java](https://drive.google.com/drive/folders/1bdaRkm9ZK3eV_Z18VlS_SyQRzGM40TQU?usp=sharing)
+[Папка с тестовыми данными и файлом java](https://drive.google.com/drive/folders/1jtFTDrXv-NbN99Ckw8ZSXjIV17Jw3oIt?usp=sharing)
 
 #### Контрольные тесты (benchmarks)
 
@@ -93,28 +93,27 @@ cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo && cmake --config RelWithDebInfo --bu
 
 | Название                  | Описание                                | Метрики         |
 | :---                      | ---                                     | :---            |
-| `add_benchmark`           | добавление элементов в структуру данных | _время_         |
-| `get_benchmark`           | взятие элементов из структуры данных    | _время_         |            |
+| `merge_sort_benchmark`           | тестирование временной сложности Merge sort | _время_         |
+| `timsort_benchmark`           | тестирование временной сложности Timsort    | _время_         |
 
 ##### Примеры запуска
 
 Генерируете набор тестовых данных, либо скачиваете с google drive. Процесс генерации описан выше.
 
 Помещаете его по пути dataset\data
-![изображение](https://user-images.githubusercontent.com/79557554/116752231-ecdaef80-aa0d-11eb-8b70-ac2307c8a3c1.png)
+![изображение](https://user-images.githubusercontent.com/79557554/119262762-176f3100-bbe5-11eb-9f40-b753bfb6eb7d.png)
 
 
 Открываете .cpp файл нужного бенчмарка двойным нажатием на него
-![изображение](https://user-images.githubusercontent.com/79557554/116752284-0845fa80-aa0e-11eb-958f-5dc9ed00d90a.png)
+![изображение](https://user-images.githubusercontent.com/79557554/119262722-e858bf80-bbe4-11eb-8a0c-86c79889d7ab.png)
 
 Запускаете метод main\
-![изображение](https://user-images.githubusercontent.com/79557554/116752396-2e6b9a80-aa0e-11eb-8af6-08ee2e06e57b.png)
+![изображение](https://user-images.githubusercontent.com/79557554/119262779-29e96a80-bbe5-11eb-8c09-427cfc0b9fad.png)
 
-Результаты будут сохранены в отдельный csv файл по пути dataset\data для методов get в файле get_result.csv, для методов add - add_result.csv
+Результаты будут сохранены в отдельный csv файл по пути dataset\data для merge sort в файле merge\res.csv, для timsort - tim\res.csv
 
 
 ## Источники
 
-_Список использованных при реализации структуры данных источников._
+_Список использованных при реализации алгоритма источников._
 
-_**Это не плагиат, это уважение чужого труда и помощь своим сокурсникам более подробно разобраться в теме.**_
