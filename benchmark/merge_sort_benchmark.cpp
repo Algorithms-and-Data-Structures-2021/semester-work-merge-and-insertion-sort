@@ -23,9 +23,8 @@ int main() {
   const auto outPath = string(kOutputPath);
   cout << "Path to the 'dataset/' folder: " << path << endl;
 
-  //TODO Изменить 2 на 6, 5 на 10
   for (int i = 1; i < 6; ++i) {
-    auto output_file = ofstream (outPath + "/TestCase" + to_string(i) + ".csv");
+    auto output_file = ofstream (outPath + "/merge/TestCase" + to_string(i) + ".csv");
     for (int j = 0; j < 10; ++j) {
       auto input_file = ifstream(path + "/TestCase" + to_string(i) +"/TestData"+ to_string(j) + ".csv");
       vector<int> vect;
@@ -50,13 +49,7 @@ int main() {
       const auto time_diff = time_point_after - time_point_before;
       const auto time_elapsed_ns = chrono::duration_cast<chrono::nanoseconds>(time_diff).count();
 
-      for (int k = 0; k < vect.size(); ++k) {
-        cout<<arr[k]<<" "<<vect[k]<<endl;
-      }
-
-      string equals = equal(arr, arr +vect.size(), vect.begin(), vect.end()) ? "equals" : "not equals";
-      output_file << "TestCase" + to_string(i) +"/TestData"+ to_string(j) +"," << time_elapsed_ns
-                  <<"," + equals<<endl;
+      output_file << time_elapsed_ns<<","<<endl;
       vect.clear();
     }
   }
