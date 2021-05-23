@@ -6,10 +6,7 @@ namespace itis {
 
   int nextGap(int gap)
   {
-    if (gap <= 1)
-    {
-      return 0;
-    }
+    if (gap <= 1){ return 0;}
     return (gap / 2) + (gap % 2);
   }
 
