@@ -16,11 +16,11 @@ namespace itis {
   }
 
   void TimSort::sort(int *arr, int length) {
-    run = getRun(length);
-    for (int i = 0; i < length; i+= run) {
-      insertionSort(arr, i, MergeSort::min(i+ run -1, length - 1));
+    int runElem = getRun(length);
+    for (int i = 0; i < length; i+= runElem) {
+      insertionSort(arr, i, MergeSort::min(i+ runElem -1, length - 1));
     }
-    for (int size = run; size < length;
+    for (int size = runElem; size < length;
          size = 2*size)
     {
       for (int left = 0; left < length;

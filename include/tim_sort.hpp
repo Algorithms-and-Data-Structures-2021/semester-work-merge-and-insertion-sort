@@ -3,7 +3,6 @@
 
 namespace itis {
 
-  int run;
 
   struct TimSort {
 
