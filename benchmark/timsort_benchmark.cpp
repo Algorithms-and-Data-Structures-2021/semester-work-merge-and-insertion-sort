@@ -3,11 +3,9 @@
 #include <string>       // string, stoi
 #include <string_view>  // string_view
 #include <chrono>       // high_resolution_clock, duration_cast, nanoseconds
-#include <sstream>      // stringstream
 #include <vector>
 #include <algorithm>
 
-#include "merge_sort.hpp"
 #include "tim_sort.hpp"
 
 using namespace std;
@@ -16,7 +14,7 @@ using namespace itis;
 
 static constexpr auto kDatasetPath = string_view{PROJECT_DATASET_DIR};
 static constexpr auto kOutputPath = string_view{PROJECT_OUTPUT_DIR};
-static constexpr auto kProjectPath = string_view{PROJECT_SOURCE_DIR};
+
 
 int main() {
 
